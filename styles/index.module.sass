@@ -1,0 +1,153 @@
+@use 'theme'
+
+.main
+	display: grid
+	font-family: sans-serif
+	width: 100%
+	// max-width: 100vw
+	min-height: 100vh
+	height: fit-content
+	// max-height: fit-content
+	margin: 0
+	background: #131313
+	background-image: linear-gradient(theme.$primaryColor 50px, black)
+	color: whitesmoke
+	// overflow-x: hidden
+	// display:block
+	// align-items:center
+
+.link a
+	color: currentColor
+	text-decoration: none
+
+/* Navigation/Menu bar */
+
+.navbar
+	position: sticky
+	top: 0
+	left: 0
+	width: 100%
+	height: 50px
+	background-color: #36454f
+	margin-bottom: 2rem
+	text-decoration: none
+	border-bottom-left-radius: 5px
+	border-bottom-right-radius: 5px
+	z-index: 100
+	margin-bottom: 100px
+
+	ul,li
+		list-style-type: none
+		margin: 0
+		padding: 0
+		// overflow: hidden
+
+.navbarNav
+	display: flex
+	align-items: center
+	justify-content: space-around
+	height: 100%
+
+.tWrap
+	position: fixed
+	padding-left: 8px
+	padding-top: 7px
+
+.intro h2::before
+	content: " "
+	border: 3px outset theme.$primaryColorLight
+	// border: 3px outset #556e7e
+	border-radius: 50%
+	width: 2.5rem
+	height: 2.5rem
+	display: inline-block
+	vertical-align: middle
+	margin-right: 5px
+	font-size: medium
+	// position: relative
+	// bottom: 3px
+
+.me
+	color: theme.$secondaryColor
+	z-index: 99
+	margin: 0
+
+.span
+	color: theme.$tertiaryColor
+	z-index: 50
+	padding: 0
+
+.grid
+	justify-self: center
+	// align-items: start
+	min-height: 50vh
+	max-height: fit-content
+	width: 60vw
+	margin: 1em
+	display: grid
+	gap: 1em 2em
+	grid-template-areas: 'card1 card1 card2 card2' 'card1 card1 card3 card3' 'card1 card1 card4 card4'
+
+	h2
+		text-align: center
+
+	@media (max-width:1000px)
+		grid-template-areas: 'card1' 'card2' 'card3' 'card4'
+
+@for $i from 0 through 4
+	.card:nth-child(#{$i})
+		grid-area: card#{$i}
+		border-radius: 5px
+		background-color: theme.$primaryColorDark
+		padding: 0.5em
+		box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem
+		transition: all 500ms
+		grid-area: link(#{$i})
+
+@for $i from 2 through 4
+	.card:nth-child(#{$i}):hover
+		box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35rem 1.75rem, rgba(2, 8, 20, 0.08) 0px 0.175rem 0.5rem
+		transform: translateY(-3px) scale(1.05)
+		animation-fill-mode: cubic-bezier(.55, .09, .68, .53)
+
+.card:nth-child(1)
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: center
+
+	p
+		max-width: 80%
+
+.linkItems
+	// display: flex
+	// align-items: center
+	// justify-content: center
+	width: clamp(25%, 50%, 75%)
+	text-decoration: underline dashed
+	list-style: none
+	text-align: center
+	display: grid
+	gap: 0.5em 0.5em
+	grid-template-areas: 'link1 link3' 'link2 link4'
+
+.linksTitle
+	text-align: center
+
+.footer
+
+	display: flex
+	flex: 1
+	padding: 2rem 0
+	// border-top: 1px solid whitesmoke
+	justify-content: center
+	align-items: center
+
+	h3
+		width: min-content
+		display: flex
+		justify-content: center
+		align-items: center
+		padding: 5px
+		// flex-grow: 1
+		border: double white medium
