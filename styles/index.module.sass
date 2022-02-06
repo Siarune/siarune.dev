@@ -105,6 +105,9 @@
 		grid-area: link(#{$i})
 
 @for $i from 2 through 4
+	.card:nth-child(#{$i})
+		min-width: 20vw
+
 	.card:nth-child(#{$i}):hover
 		box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35rem 1.75rem, rgba(2, 8, 20, 0.08) 0px 0.175rem 0.5rem
 		transform: translateY(-3px) scale(1.05)
@@ -115,9 +118,6 @@
 	flex-direction: column
 	align-items: center
 	justify-content: center
-
-	p
-		max-width: 80%
 
 .linkItems
 	// display: flex
