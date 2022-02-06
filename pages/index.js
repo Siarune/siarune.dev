@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import styles from '../styles/index.module.scss'
+import styles from '/styles/index.module.sass'
 
 export default function Home() {
   return (
@@ -10,64 +10,61 @@ export default function Home() {
       <Head>
         <title>Siarune</title>
         <meta name={styles.Description} content="My stupid little site" />
-        <link rel="icon" href="/thumbnails/recolor.png" />
+        <link rel="icon" href="/hentie_solid.png" />
       </Head>
-
 
 
       <nav className={styles.navbar}>
         <ul className={styles.navbarNav}>
 
-          <li className={styles.navItem, styles.intro}>
-            <Image src="/thumbnails/recolor.png" alt="chikin" className="styles.thumbnail" width="100" height="100" layout="responsive" ></Image>
-            {/* <img className={styles.thumbnail} src="/thumbnails/recolor.png"></img> */}
-            {/* <Image src="/thumbnails/dino.jpg" alt="dino" className={styles.cover} width="100" height="100" layout="responsive" /> */}
-            <h2>Siarune</h2>
+          <li className={styles.intro}>
+            <div className={styles.tWrap}>
+            <Image src="/hentieSolid.png" alt="chikin" className={styles.thumbnail} height="32" width="32" layout="fixed" ></Image>
+            </div>
+            <h2 className={styles.me}>Siarune<span className={styles.span}>.dev</span></h2>
           </li>
 
-          <li className={styles.navItem}>
-            <h2>
-              Home
-            </h2>
-          </li>
-
-          {/* <!-- Dropdown of my other links --> */}
-          <li className={styles.navItem, styles.hasDropdown}>
-            <h2>
-              <a href="#" onClick="reset()">Links</a>
-            </h2>
-            <ul className={styles.dropdown}>
-              <li className="dropdown-item">
-                <a href="https://github.com/Siarune/">Github</a>
-              </li>
-
-              <li className={styles.dropdownItem}>
-                <a href="https://siarune.tumblr.com/">Tumblr</a>
-              </li>
-
-              <li className={styles.dropdownItem, styles.tooltip}>
-                <a href="#" >Discord</a>
-                <span className={styles.tooltiptext}>Copy ID?</span>
-              </li>
-
-
-            </ul>
-          </li>
         </ul>
       </nav>
 
 
-      <div className={styles.shiny}>
-
-        <ul>
-          <li>Welcome to the Idiot Corner!</li>
-        </ul>
-
-      </div>
-
 
       <div className={styles.grid}>
 
+        <div className={styles.card}>
+          <h2>
+            About Me
+          </h2>
+          <p>
+            Hey, Sia here. <br></br>
+            Nice place, huh? It&apos;s taken quite a few redesigns, and this certainly won&apos;t be the last. :3
+            <br></br>
+            I&apos;m just a computer science student with a little too much free time. Why don&apos;t you check out the place while you&apos;re here?
+          </p>
+          
+         {/* <div className={styles.linkGrid}> */}
+           <h4 className={styles.linksTitle}>Links</h4>
+                <ul className={styles.linkItems}>
+
+                  <li className={styles.link1}><a href="https://github.com/Siarune" target="_blank" rel="noopener noreferrer">
+                    Github
+                      </a></li>
+
+                  <li className={styles.link2}><a href="https://gitlab.com/Siarune" target="_blank" rel="noopener noreferrer">
+                    Gitlab
+                      </a></li>
+
+                  <li className={styles.link3}><a href="https://siarune.me/" target="_blank" rel="noopener noreferrer">
+                  Old Site
+                      </a></li>
+
+                  <li className={styles.link4}><a href="https://steamcommunity.com/profiles/76561199007571171/" target="_blank" rel="noopener noreferrer">
+                  Steam  
+                    </a></li>
+
+                </ul>
+
+        </div>
 
         <div className={styles.card}>
           <h2>
@@ -103,20 +100,12 @@ export default function Home() {
           </h4>
         </div>
 
-        <div className={styles.card}>
-          <h2>
-            About Me
-          </h2>
-          <p>
-            Hey, Sia here. Nice place, huh? It&apos;s taken quite a few redesigns, and this certainly won&apos;t be the last. :3
-          </p>
-        </div>
+
 
       </div>
 
       {/* <hr></hr> */}
       <footer className={styles.footer}>
-
         <h3>
           {/* And more to come! When? I have no idea! */}
           Area Under Construction

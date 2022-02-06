@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../../styles/poetry.module.scss'
+import styles from '../../styles/poetry.module.sass'
 
 export default function Poetry() {
     return (
