@@ -10,7 +10,14 @@ export default function Home() {
       <Head>
         <title>Siarune</title>
         <meta name={styles.Description} content="My stupid little site" />
-        <link rel="icon" href="/hentie_solid.png" />
+        {/* <link rel="icon" href="/hentie_solid.png" /> */}
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
       </Head>
 
 
@@ -19,7 +26,7 @@ export default function Home() {
 
           <li className={styles.intro}>
             <div className={styles.tWrap}>
-            <Image src="/hentieSolid.png" alt="chikin" className={styles.thumbnail} height="32" width="32" layout="fixed" ></Image>
+              <Image src="/hentieSolid.png" alt="chikin" className={styles.thumbnail} height="32" width="32" layout="fixed" />
             </div>
             <h2 className={styles.me}>Siarune<span className={styles.span}>.dev</span></h2>
           </li>
@@ -36,33 +43,33 @@ export default function Home() {
             About Me
           </h2>
           <p>
-            Hey, Sia here. <br></br>
+            Hey, Sia here. <br/>
             Nice place, huh? It&apos;s taken quite a few redesigns, and this certainly won&apos;t be the last. :3
-            <br></br>
+            <br/>
             I&apos;m just a computer science student with a little too much free time. Why don&apos;t you check out the place while you&apos;re here?
           </p>
-          
-         {/* <div className={styles.linkGrid}> */}
-           <h4 className={styles.linksTitle}>Links</h4>
-                <ul className={styles.linkItems}>
 
-                  <li className={styles.link1}><a href="https://github.com/Siarune" target="_blank" rel="noopener noreferrer">
-                    Github
-                      </a></li>
+          {/* <div className={styles.linkGrid}> */}
+          <h4 className={styles.linksTitle}>Links</h4>
+          <ul className={styles.linkItems}>
 
-                  <li className={styles.link2}><a href="https://gitlab.com/Siarune" target="_blank" rel="noopener noreferrer">
-                    Gitlab
-                      </a></li>
+            <li className={styles.link1}><a href="https://github.com/Siarune" target="_blank" rel="noopener noreferrer">
+              Github
+            </a></li>
 
-                  <li className={styles.link3}><a href="https://siarune.me/" target="_blank" rel="noopener noreferrer">
-                  Old Site
-                      </a></li>
+            <li className={styles.link2}><a href="https://gitlab.com/Siarune" target="_blank" rel="noopener noreferrer">
+              Gitlab
+            </a></li>
 
-                  <li className={styles.link4}><a href="https://steamcommunity.com/profiles/76561199007571171/" target="_blank" rel="noopener noreferrer">
-                  Steam  
-                    </a></li>
+            <li className={styles.link3}><a href="https://siarune.me/" target="_blank" rel="noopener noreferrer">
+              Old Site
+            </a></li>
 
-                </ul>
+            <li className={styles.link4}><a href="https://steamcommunity.com/profiles/76561199007571171/" target="_blank" rel="noopener noreferrer">
+              Steam
+            </a></li>
+
+          </ul>
 
         </div>
 
