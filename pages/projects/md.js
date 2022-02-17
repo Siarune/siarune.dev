@@ -1,40 +1,9 @@
-// import React from 'react'
-import React, { Component } from 'react'
-import ReactDom from 'react-dom'
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from "remark-gfm";
 import styles from "../../styles/index.module.sass";
 import Head from "next/head";
+import { serialize } from 'next-mdx-remote/serialize';
+import { MDXRemote } from 'next-mdx-remote';
 
-import txt from '../../public/markdown/hello.md'
-
-
-class Terms extends Component {
-    constructor(props) {
-        super(props)
-
-        this.state = { terms: null }
-    }
-
-    // eslint-disable-next-line react/no-deprecated
-    componentWillMount() {
-        fetch(txt).then((response) => response.text()).then((text) => {
-            this.setState({ terms: text })
-        })
-    }
-
-    // render() {
-    //     return (
-    //         <div className="content">
-    //             <ReactMarkdown source={this.state.terms} />
-    //         </div>
-    //     )
-    // }
-}
-
-export default function md() {
-
-    const markdown = `hihi`
+export default function md({ source }) {
     return (
         <main className={styles.main}>
             <Head>
@@ -50,11 +19,16 @@ export default function md() {
                 <meta name="theme-color" content="#ffffff"/>
             </Head>
 
-            {/* eslint-disable-next-line react/no-children-prop */}
-            <ReactMarkdown  children={markdown}/>
-            {/* eslint-disable-next-line react/no-children-prop */}
-            <ReactMarkdown children={this.state.terms} />
+
+            <MDXRemote {...source} />
 
         </main>
     )
+}
+
+export async function getStaticProps() {
+    // MDX text - can be from a local file, database, anywhere
+    const source = '# hi'
+    const mdxSource = await serialize(source)
+    return { props: { source: mdxSource } }
 }
