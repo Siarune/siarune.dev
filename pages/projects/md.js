@@ -1,34 +1,90 @@
 import styles from "../../styles/index.module.sass";
+import MetaBundle from '../../components/MetaBundle'
 import Head from "next/head";
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
+import { promises as fs } from 'fs'
+import path from 'path'
+// import renderToString from "next-mdx-remote/render-to-string";
+// import hydrate from "next-mdx-remote/hydrate";
+// import fs from 'fs';
+// import * as path from "path";
 
 export default function md({ source }) {
     return (
         <main className={styles.main}>
-            <Head>
-                <title>Siarune</title>
-                <meta name={styles.Description} content="My stupid little site"/>
-                {/* <link rel="icon" href="/hentie_solid.png" /> */}
-                <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
-                <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
-                <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
-                <link rel="manifest" href="/site.webmanifest"/>
-                <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"/>
-                <meta name="msapplication-TileColor" content="#da532c"/>
-                <meta name="theme-color" content="#ffffff"/>
-            </Head>
+            <MetaBundle />
 
 
-            <MDXRemote {...source} />
+            {/* <MDXRemote {...source} /> */}
 
         </main>
     )
 }
 
-export async function getStaticProps() {
-    // MDX text - can be from a local file, database, anywhere
-    const source = '# hi'
-    const mdxSource = await serialize(source)
-    return { props: { source: mdxSource } }
-}
+// export async function getStaticProps() {
+//     // MDX text - can be from a local file, database, anywhere
+//     const source = '# hi'
+//     const mdxSource = await serialize(source)
+//     return { props: { source: mdxSource } }
+// }
+
+// export async function getStaticProps() {
+//     const postsDirectory = path.join(process.cwd(), 'public/markdown')
+//     const filenames = await fs.readdir(postsDirectory)
+
+//     const posts = filenames.map(async (filename) => {
+//         const filePath = path.join(postsDirectory, filename)
+//         const fileContents = await fs.readFile(filePath, 'utf8')
+
+//         // Generally you would parse/transform the contents
+//         // For example you can transform markdown to HTML here
+        
+//         const mdxSource = await serialize(fileContents)
+//         // console.log(mdxSource)
+
+//         return {
+//             filename,
+//             content: fileContents,
+//             source: mdxSource
+//         }
+//     })
+//     // By returning { props: { posts } }, the Blog component
+//     // will receive `posts` as a prop at build time
+
+
+//     return {
+//         props: {
+//             posts: await Promise.all(posts),
+//             // source: mdxSource
+//         },
+//     }
+// }
+
+
+// This function gets called at build time on server-side.
+// It won't be called on client-side.
+// export async function getStaticProps() {
+//     const postsDirectory = path.join(process.cwd(), 'markdown')
+//     const filenames = fs.readdirSync(postsDirectory)
+
+//     const posts = filenames.map(filename => {
+//         const filePath = path.join(postsDirectory, filename)
+//         const fileContents = fs.readFileSync(filePath, 'utf8')
+
+//         // Generally you would parse/transform the contents
+//         // For example you can transform markdown to HTML here
+
+//         return {
+//             filename,
+//             content: fileContents,
+//         }
+//     })
+//     // By returning { props: posts }, the Blog component
+//     // will receive `posts` as a prop at build time
+//     return {
+//         props: {
+//             posts,
+//         },
+//     }
+// }
