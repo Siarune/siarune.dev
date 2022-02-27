@@ -67,6 +67,51 @@
 	// position: relative
 	// bottom: 3px
 
+// .sign
+// 	align-items: center
+
+.btn
+	background-color: theme.$primaryColorDark
+	border: 1px solid theme.$primaryColorDark
+	border-radius: 10px
+	padding: 4px
+	filter: brightness(0.8)
+	opacity: 0.7
+
+	h3
+		margin: 5px
+		color: whitesmoke
+
+.toolTipText
+	width: max-content
+	height: min-content
+	margin-top: 12.5px
+	margin-right: 10px
+	padding: 5px
+	background: theme.$primaryColorLight
+	position: absolute
+	border-radius: 3px
+	opacity: 0
+	pointer-events: none
+	animation-duration: 500ms
+
+	h4
+		margin: 0
+		color: #252525
+
+.sign:hover .toolTipText
+	opacity: 1
+
+.sign .toolTipText::after
+	content: " "
+	position: absolute
+	bottom: 100%
+	left: 25%
+	margin-left: -10px
+	border-width: 10px
+	border-style: solid
+	border-color: transparent transparent theme.$primaryColorLight transparent
+
 .me
 	color: theme.$secondaryColor
 	z-index: 99
@@ -107,6 +152,7 @@
 @for $i from 2 through 4
 	.card:nth-child(#{$i})
 		min-width: 20vw
+		text-align: center
 
 	.card:nth-child(#{$i}):hover
 		box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35rem 1.75rem, rgba(2, 8, 20, 0.08) 0px 0.175rem 0.5rem

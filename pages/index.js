@@ -1,24 +1,13 @@
 import Head from 'next/head'
+import MetaBundle from '../components/MetaBundle'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '/styles/index.module.sass'
 
 export default function Home() {
   return (
-
     <main className={styles.main}>
-      <Head>
-        <title>Siarune</title>
-        <meta name={styles.Description} content="My stupid little site" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-        <meta name="msapplication-TileColor" content="#da532c" />
-        <meta name="theme-color" content="#ffffff" />
-      </Head>
-
+      <MetaBundle />
 
       <nav className={styles.navbar}>
         <ul className={styles.navbarNav}>
@@ -28,6 +17,17 @@ export default function Home() {
               <Image src="/hentieSolid.png" alt="chikin" className={styles.thumbnail} height="32" width="32" layout="fixed" />
             </div>
             <h2 className={styles.me}>Siarune<span className={styles.span}>.dev</span></h2>
+          </li>
+
+          <li className={styles.sign}>
+            <button className={styles.btn}>
+              <h3>Sign in/up</h3>
+            </button>
+            <div className={styles.toolTipText}>
+              <h4>
+                Coming &#34;Soon&#34;
+              </h4>
+            </div>
           </li>
 
         </ul>
@@ -42,9 +42,9 @@ export default function Home() {
             About Me
           </h2>
           <p>
-            Hey, Sia here. <br/>
+            Hey, Sia here. <br />
             Nice place, huh? It&apos;s taken quite a few redesigns, and this certainly won&apos;t be the last. :3
-            <br/>
+            <br />
             I&apos;m just a computer science student with a little too much free time. Why don&apos;t you check out the place while you&apos;re here?
           </p>
 
@@ -74,7 +74,7 @@ export default function Home() {
 
         <div className={styles.card}>
           <h2>
-            <Link href="projects/sauce"><a>
+            <Link href="/projects/sauce"><a>
               This Website
             </a></Link>
           </h2>
@@ -85,7 +85,7 @@ export default function Home() {
 
         <div className={styles.card}>
           <h2>
-            <Link href="projects/poetry"><a>
+            <Link href="/projects/poetry"><a>
               Poetry is for Nerds
             </a></Link>
           </h2>
@@ -97,7 +97,7 @@ export default function Home() {
 
         <div className={styles.card}>
           <h2>
-            <Link href="projects/maboibart"><a>
+            <Link href="/projects/maboibart"><a>
               Bartholomew
             </a></Link>
           </h2>
