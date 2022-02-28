@@ -8,13 +8,24 @@
 	align-items: center
 
 .bartWrap
-	width: 8rem
+	width: max-content
 	pointer-events: none
 	margin: 2rem
+	display: flex
+	flex-direction: row
+	align-items: center
+
+.portrait, .title
+	padding: .5em
 
 
 .content
 	width: 90vw
-	height: 10vh
+	min-height: 10vh
+	max-height: min-content
 	background-color: theme.$primaryColorDark
 	border-radius: 5px
+	padding: 1em
+	line-height: 1.4
+	font-size: large
+	font-weight: normal

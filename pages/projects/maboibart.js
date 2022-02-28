@@ -1,31 +1,34 @@
-import Head from 'next/head'
+import MetaBundle from '../../components/MetaBundle'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '/styles/bartyboy.module.sass'
+import { serialize } from 'next-mdx-remote/serialize';
+import { MDXRemote } from 'next-mdx-remote';
+import { promises as fs } from 'fs'
+import path from 'path'
 
-export default function bart() {
+export default function bart({ source }) {
 	return (
 		<main className={styles.main}>
-			<Head>
-				<title>Siarune</title>
-				<meta name={styles.Description} content="My stupid little site" />
-				<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-				<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-				<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-				<link rel="manifest" href="/site.webmanifest" />
-				<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-				<meta name="msapplication-TileColor" content="#da532c" />
-				<meta name="theme-color" content="#ffffff" />
-			</Head>
+			<MetaBundle />
 
 			<div className={styles.bartWrap}>
-				<Image src="/bart.png" alt="bart" height="128" width="128" layout="responsive" />
+				<Image src="/bart.png" alt="bart" height="128" width="128" layout="fixed" className={styles.portrait}/>
+				<h1 className={styles.title}>Bartholomew</h1>
 			</div>
 
 			<div className={styles.content}>
-				
+				<MDXRemote {...source} className={styles.mdx} />
 			</div>
 
 		</main>
 	)
+}
+
+export async function getStaticProps() {
+	const mdPath = await path.join(process.cwd(), 'public/markdown/bart.mdx');
+	const rawMarkdown = await fs.readFile(mdPath, 'utf8');
+	const postMd = await serialize(rawMarkdown);
+
+	return { props: { source: postMd } }
 }
