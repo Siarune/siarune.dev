@@ -93,7 +93,6 @@ export default function Home() {
             ...Wait, I&apos;m a nerd
           </h4>
         </div>
-        {/* Wait, I'm a nerd */}
 
         <div className={styles.card}>
           <h2>
@@ -121,3 +120,5 @@ export default function Home() {
     </main>
   )
 }
+
+console.log(process.env.NEXT_PUBLIC_CLERK_FRONTEND_API);

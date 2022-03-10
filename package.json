@@ -7,9 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "setup":"add dependencies"
+    "setup": "add dependencies"
   },
   "dependencies": {
+    "@clerk/nextjs": "^2.11.13",
     "@mdx-js/loader": "^2.0.0",
     "@mdx-js/react": "^2.0.0",
     "fs": "^0.0.1-security",
