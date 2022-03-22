@@ -1,13 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../../styles/poetry.module.sass'
-import CluckHUD from '../../components/CluckHUD.js'
 
 export default function Poetry() {
     return (
         <div className={styles.container}>
-
-            <CluckHUD />
 
             <div className={styles.bannerWrapper}>
                 <h1 className={styles.banner}>
@@ -35,8 +32,8 @@ export default function Poetry() {
                                 express my dismay. <br></br> <br></br>
                                 Because spooky scary skeletons <br></br>
                                 that sent shivers down my spine <br></br>
-                                they&aposre shrieking skulls <br></br>
-                                won&apost shock my skull <br></br>
+                                they&apos;re shrieking skulls <br></br>
+                                won&apos;t shock my skull <br></br>
                                 or seal my doom tonight. <br></br> <br></br>
                                 But the spook lives on <br></br>
                                 every day of the year. <br></br>
@@ -124,9 +121,9 @@ export default function Poetry() {
                             I lay here tired <br></br>
                             In worry mired <br></br>
                             Trying to fall asleep <br></br> <br></br>
-                            But my family&aposs loud as fuck <br></br>
+                            But my family&apos;s loud as fuck <br></br>
                             And cringy memories are stuck <br></br>
-                            So I guess I&aposll count some sheep
+                            So I guess I&apos;ll count some sheep
                         </p>
                         <div className={styles.littleInfo}>
                             <p>

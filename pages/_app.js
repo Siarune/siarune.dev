@@ -1,6 +1,8 @@
 import { ClerkProvider } from '@clerk/nextjs';
-import styles from '../styles/global.sass'
+import '../styles/global.sass'
+import base from '/styles/base.module.sass';
 import MetaBundle from '../components/MetaBundle'
+import CluckHUD from '/components/CluckHUD'
 
 
 function MyApp({ Component, pageProps }) {
@@ -10,7 +12,13 @@ function MyApp({ Component, pageProps }) {
 
 			<MetaBundle />
 
-			<Component {...pageProps} />
+			<main className={base.main}>
+
+				<CluckHUD />
+
+				<Component {...pageProps} />
+
+			</main>
 
 		</ClerkProvider>
 	);

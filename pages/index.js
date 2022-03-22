@@ -1,15 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '/styles/index.module.sass'
-import { useClerk, useUser, UserButton, SignedOut, SignedIn } from "@clerk/nextjs";
 import CluckHUD from '../components/CluckHUD';
 
 export default function Home() {
 	return (
-		<main className={styles.main}>
-
-			<CluckHUD />
-
+		<div className={styles.cont}>
 			<div className={styles.grid}>
 
 				<div className={styles.card}>
@@ -23,25 +19,33 @@ export default function Home() {
 						I&apos;m just a computer science student with a little too much free time. Why don&apos;t you check out the place while you&apos;re here?
 					</p>
 
-					{/* <div className={styles.linkGrid}> */}
 					<h4 className={styles.linksTitle}>Links</h4>
+
 					<ul className={styles.linkItems}>
 
-						<li className={styles.link1}><a href="https://github.com/Siarune" target="_blank" rel="noopener noreferrer">
-							Github
-						</a></li>
+						<li className={styles.link1}>
+							<a href="https://github.com/Siarune" target="_blank" rel="noopener noreferrer">
+								Github
+							</a>
+						</li>
 
-						<li className={styles.link2}><a href="https://gitlab.com/Siarune" target="_blank" rel="noopener noreferrer">
-							Gitlab
-						</a></li>
+						<li className={styles.link2}>
+							<a href="https://gitlab.com/Siarune" target="_blank" rel="noopener noreferrer">
+								Gitlab
+							</a>
+						</li>
 
-						<li className={styles.link3}><a href="https://siarune.me/" target="_blank" rel="noopener noreferrer">
-							Old Site
-						</a></li>
+						<li className={styles.link3}>
+							<a href="https://siarune.me/" target="_blank" rel="noopener noreferrer">
+								Old Site
+							</a>
+						</li>
 
-						<li className={styles.link4}><a href="https://steamcommunity.com/profiles/76561199007571171/" target="_blank" rel="noopener noreferrer">
-							Steam
-						</a></li>
+						<li className={styles.link4}>
+							<a href="https://steamcommunity.com/profiles/76561199007571171/" target="_blank" rel="noopener noreferrer">
+								Steam
+							</a>
+						</li>
 
 					</ul>
 
@@ -82,13 +86,12 @@ export default function Home() {
 
 			</div>
 
-			{/* <hr></hr> */}
 			<footer className={styles.footer}>
 				<h3>
 					Everything Under Construction
 				</h3>
 
 			</footer>
-		</main>
+		</div>
 	)
 }

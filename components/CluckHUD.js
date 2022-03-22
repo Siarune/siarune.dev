@@ -1,5 +1,6 @@
 import styles from '/styles/chud.module.sass'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useClerk, useUser, UserButton, SignedOut, SignedIn } from "@clerk/nextjs";
 
 export default function CluckHUD() {
@@ -11,7 +12,9 @@ export default function CluckHUD() {
                     <div className={styles.tWrap}>
                         <Image src="/hentieSolid.png" alt="chikin" className={styles.thumbnail} height="32" width="32" layout="fixed" />
                     </div>
+                    {/* <Link href="/"> */}
                     <h2 className={styles.me}>Siarune<span className={styles.span}>.dev</span></h2>
+                    {/* </Link> */}
                 </li>
                 <SignedIn>
                     <SignedInButton />

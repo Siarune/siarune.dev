@@ -1,16 +1,13 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import styles from '/styles/sauce.module.sass'
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
 import { promises as fs } from 'fs'
 import path from 'path'
-import CluckHUD from '../../components/CluckHUD';
 
 export default function sauce({ source }) {
     return (
-        <main className={styles.main}>
-            <CluckHUD />
+        <cont className={styles.cont}>
             <div className={styles.hentWrap}>
                 <Image src="/hentieSolid.png" alt="bart" height="100" width="100" layout="fixed" className={styles.portrait} />
                 <h1 className={styles.title}>Whatever This Place Is</h1>
@@ -19,7 +16,7 @@ export default function sauce({ source }) {
             <div className={styles.content}>
                 <MDXRemote {...source} components={components} className={styles.mdx} />
             </div>
-        </main>
+        </cont>
     )
 }
 

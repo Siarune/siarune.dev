@@ -5,12 +5,10 @@ import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
 import { promises as fs } from 'fs'
 import path from 'path'
-import CluckHUD from '../../components/CluckHUD';
 
 export default function bart({ source }) {
 	return (
-		<main className={styles.main}>
-			<CluckHUD />
+		<div className={styles.cont}>
 			<div className={styles.bartWrap}>
 				<Image src="/bart.png" alt="bart" height="128" width="128" layout="fixed" className={styles.portrait} />
 				<h1 className={styles.title}>Bartholomew</h1>
@@ -20,7 +18,7 @@ export default function bart({ source }) {
 				<MDXRemote {...source} components={components} className={styles.mdx} />
 			</div>
 
-		</main>
+		</div>
 	)
 }
 
