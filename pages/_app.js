@@ -1,17 +1,19 @@
-import { useRouter } from "next/router";
 import { ClerkProvider } from '@clerk/nextjs';
-import '../styles/globals.sass'
+import styles from '../styles/global.sass'
+import MetaBundle from '../components/MetaBundle'
+
 
 function MyApp({ Component, pageProps }) {
-  const { push } = useRouter();
-  return (
-    <ClerkProvider
-      frontendApi="clerk.patient.shrimp-78.lcl.dev"
-      navigate={(to) => push(to)}
-    >
-      <Component {...pageProps} />
-    </ClerkProvider>
-  );
+
+	return (
+		<ClerkProvider>
+
+			<MetaBundle />
+
+			<Component {...pageProps} />
+
+		</ClerkProvider>
+	);
 }
 
-export default MyApp
+export default MyApp;
