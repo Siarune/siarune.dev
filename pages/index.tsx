@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '/styles/index.module.sass'
-import CluckHUD from '../components/CluckHUD';
 
 export default function Home() {
 	return (

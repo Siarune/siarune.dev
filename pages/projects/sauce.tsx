@@ -5,19 +5,26 @@ import { MDXRemote } from 'next-mdx-remote';
 import { promises as fs } from 'fs'
 import path from 'path'
 
-export default function sauce({ source }) {
-    return (
-        <cont className={styles.cont}>
-            <div className={styles.hentWrap}>
-                <Image src="/hentieSolid.png" alt="bart" height="100" width="100" layout="fixed" className={styles.portrait} />
-                <h1 className={styles.title}>Whatever This Place Is</h1>
-            </div>
+export default function sauce({ source }: { source: any }) {
+	return (
+		<div className={styles.cont}>
+			<div className={styles.hentWrap}>
+				<Image
+					src="/hentieSolid.png"
+					alt="bart"
+					height="100"
+					width="100"
+					layout="fixed"
+					className={styles.portrait}
+				/>
+				<h1 className={styles.title}>Whatever This Place Is</h1>
+			</div>
 
-            <div className={styles.content}>
-                <MDXRemote {...source} components={components} className={styles.mdx} />
-            </div>
-        </cont>
-    )
+			<div className={styles.content}>
+				<MDXRemote {...source} components={components} className={styles.mdx} />
+			</div>
+		</div>
+	);
 }
 
 const components = {}

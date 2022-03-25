@@ -1,12 +1,12 @@
+import type { AppProps } from "next/app";
 import { ClerkProvider } from '@clerk/nextjs';
 import '../styles/global.sass'
 import base from '/styles/base.module.sass';
 import MetaBundle from '../components/MetaBundle'
-import CluckHUD from '/components/CluckHUD'
+import CluckHUD from '../components/CluckHUD'
 
 
-function MyApp({ Component, pageProps }) {
-
+function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<ClerkProvider>
 
