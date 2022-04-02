@@ -1,6 +1,5 @@
 import styles from '/styles/chud.module.sass'
 import Image from 'next/image'
-import Link from 'next/link'
 import { useClerk, useUser, UserButton, SignedOut, SignedIn } from "@clerk/nextjs";
 
 export default function CluckHUD() {

@@ -1,0 +1,41 @@
+@use 'theme'
+
+.cont
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+
+.infoBox
+    display: inherit
+    margin-bottom: 2em
+    color: theme.$secondaryColor
+
+    h2
+        margin: .4em
+
+
+
+.fof
+    width: min-content
+    height: min-content
+    margin: auto
+    margin-right: .5em
+    color: theme.$tertiaryColor
+    font-size: xxx-large
+
+
+.homeBtn
+    background-color: transparent
+    border-radius: 5px
+    color: whitesmoke
+    transition: all 300ms
+
+    h3
+        margin-right: 0.5em
+        margin-left: 0.5em
+
+
+.homeBtn:hover
+    transform: scale(1.02) translateY(-2px)
+    cursor: pointer
