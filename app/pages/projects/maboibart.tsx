@@ -1,10 +1,10 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import styles from '../../styles/bartyboy.module.sass'
-import { serialize } from 'next-mdx-remote/serialize';
-import { MDXRemote } from 'next-mdx-remote';
-import { promises as fs } from 'fs'
-import path from 'path'
+import Image from "next/image"
+import Link from "next/link"
+import styles from "../../styles/bartyboy.module.sass"
+import { serialize } from "next-mdx-remote/serialize"
+import { MDXRemote } from "next-mdx-remote"
+import { promises as fs } from "fs"
+import path from "path"
 
 export default function bart({ source }: { source: any }) {
 	return (
@@ -25,15 +25,15 @@ export default function bart({ source }: { source: any }) {
 				<MDXRemote {...source} components={components} className={styles.mdx} />
 			</div>
 		</div>
-	);
+	)
 }
 
 const components = {}
 
 export async function getStaticProps() {
-	const mdPath = await path.join(process.cwd(), 'public/markdown/bart.mdx');
-	const rawMarkdown = await fs.readFile(mdPath, 'utf8');
-	const postMd = await serialize(rawMarkdown);
+	const mdPath = path.join(process.cwd(), "public/markdown/bart.mdx")
+	const rawMarkdown = await fs.readFile(mdPath, "utf8")
+	const postMd = await serialize(rawMarkdown)
 
 	return { props: { source: postMd } }
 }
