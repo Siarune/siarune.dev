@@ -3,7 +3,7 @@
 
 datasource db {
     provider             = "mysql"
-    url                  = "mysql://lllgf944sydw:pscale_pw_7CaHgClngYz6upC52r5riuT_Wl-ogucN0Q3ZUMmyXpk@ezjaz6sye9wb.us-east-1.psdb.cloud/siarune_dev?sslaccept=strict"
+    url                  = env("NEXT_PUBLIC_PSCALE_URL")
     referentialIntegrity = "prisma"
 }
 
