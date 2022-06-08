@@ -9,7 +9,9 @@
     "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
     "test": "jest",
     "test:watch": "jest --watch",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "prisma": {
     "schema": "db/schema.prisma"
@@ -36,9 +38,20 @@
     "zod": "3.14.4"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@storybook/addon-actions": "^6.5.7",
+    "@storybook/addon-essentials": "^6.5.7",
+    "@storybook/addon-interactions": "^6.5.7",
+    "@storybook/addon-links": "^6.5.7",
+    "@storybook/builder-webpack5": "^6.5.7",
+    "@storybook/manager-webpack5": "^6.5.7",
+    "@storybook/react": "^6.5.7",
+    "@storybook/testing-library": "^0.0.11",
     "@types/preview-email": "2.0.1",
     "@types/react": "18.0.1",
+    "babel-loader": "^8.2.5",
     "eslint": "7.32.0",
+    "eslint-plugin-storybook": "0.5.12",
     "husky": "7.0.4",
     "lint-staged": "11.3.0-beta.2",
     "prettier": "2.6.2",
