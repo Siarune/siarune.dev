@@ -1,27 +1,79 @@
 @use 'theme'
 
 .link a
-	// color: currentColor
 	text-decoration: none
 
-.navbar
+.navbar, .Moon, .Forest, .Book, .Volcano
 	position: sticky
 	top: 0
 	left: 0
 	width: 100%
-	height: 50px
-	background-color: #36454f
-	margin-bottom: 2rem
+	height: 3rem
+	background-color: black
 	text-decoration: none
-	border-bottom-left-radius: 5px
-	border-bottom-right-radius: 5px
 	z-index: 100
-	margin-bottom: 100px
 
 	ul,li
 		list-style-type: none
 		margin: 0
 		padding: 0
+
+.Moon
+	background: theme.$Moonlight_Border
+
+	.intro h2:before
+		border: 3px outset theme.$Moonlight_Accent
+
+	.btn
+		background-color: theme.$Moonlight_Bg_2
+		border: 1px solid theme.$Moonlight_Bg_2
+
+		h3
+			color: theme.$Moonlight_Text
+
+
+.Forest
+	background: theme.$Forest_Bg
+
+	.intro h2:before
+		border: 3px outset theme.$Forest_Tree
+
+	.btn
+		background-color: theme.$Forest_Bg_2
+		border: 1px solid theme.$Forest_Bg_2
+		
+		h3
+			color: theme.$Forest_Text
+
+
+.Book
+	background: theme.$Book_Fg
+
+	.intro h2:before
+		border: 3px outset theme.$Book_Txt
+
+	.btn
+		background-color: theme.$Book_Bg_2
+		border: 1px solid theme.$Book_Bg_2
+
+		h3
+			color: theme.$Book_Txt
+
+
+.Volcano
+	background: theme.$Volcano_Var
+
+	.intro h2:before
+		border: 3px outset theme.$Volcano_Accent
+
+	.btn
+		background-color: theme.$Volcano_Bg
+		border: 1px solid theme.$Volcano_Bg
+
+		h3
+			color: theme.$Volcano_Disabled
+
+
 
 .navbarNav
 	display: flex
@@ -35,8 +87,7 @@
 	padding-top: 7px
 
 .intro h2::before
-	content: " "
-	border: 3px outset theme.$primaryColorLight
+	content: ""
 	border-radius: 50%
 	width: 2.5rem
 	height: 2.5rem
@@ -46,27 +97,20 @@
 	font-size: medium
 
 .btn
-	background-color: theme.$primaryColorDark
-	border: 1px solid theme.$primaryColorDark
 	border-radius: 10px
 	padding: 4px
 	transition: all 300ms
 
 	h3
 		margin: 5px
-		color: whitesmoke
 
 .btn:hover
 	cursor: pointer
-	transform: scale(1.05)
-	// animation-fill-mode: cubic-bezier(.55, .09, .68, .53)
 
 .me
 	color: theme.$secondaryColor
-	// z-index: 99
 	margin: 0
 
 .span
 	color: theme.$tertiaryColor
-	// z-index: 50
 	padding: 0

@@ -1,5 +1,15 @@
 @use 'theme'
 
+.main
+	background: theme.$Moonlight_Contrast
+	// height: calc(100vh - 3rem)
+	min-height: 100vh
+	max-height:fit-content
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: space-between
+
 .cont
 	display: grid
 
@@ -8,12 +18,13 @@
 	text-decoration: none
 
 .grid
+	color: theme.$Moonlight_Text
 	justify-self: center
 	// align-items: start
 	min-height: 50vh
 	max-height: fit-content
 	width: 60vw
-	margin: 1em
+	// margin: 1em
 	display: grid
 	gap: 1em 2em
 	grid-template-areas: 'card1 card1 card2 card2' 'card1 card1 card3 card3' 'card1 card1 card4 card4'
@@ -23,12 +34,15 @@
 
 	@media (max-width:1000px)
 		grid-template-areas: 'card1' 'card2' 'card3' 'card4'
+		width: 90vw
+		margin-top: 2rem
+		margin-bottom: 2rem
 
 @for $i from 0 through 4
 	.card:nth-child(#{$i})
 		grid-area: card#{$i}
 		border-radius: 5px
-		background-color: theme.$primaryColorDark
+		background-color: theme.$Moonlight_Bg_2
 		padding: 0.5em
 		box-shadow: rgba(3, 8, 20, 0.1) 0 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0 0.075rem 0.175rem
 		transition: all 500ms
@@ -37,6 +51,9 @@
 	.card:nth-child(#{$i})
 		min-width: 20vw
 		text-align: center
+		
+		h4
+			opacity: 60%
 
 	.card:nth-child(#{$i}):hover
 		box-shadow: rgba(2, 8, 20, 0.1) 0 0.35rem 1.75rem, rgba(2, 8, 20, 0.08) 0 0.175rem 0.5rem
@@ -49,35 +66,13 @@
 	align-items: center
 	justify-content: center
 
-.linkItems
-	// display: flex
-	// align-items: center
-	// justify-content: center
-	width: clamp(25%, 50%, 75%)
-	text-decoration: underline dashed
-	list-style: none
-	text-align: center
-	display: grid
-	gap: 0.5em 0.5em
-	grid-template-areas: 'link1 link3' 'link2 link4'
-
-.linksTitle
-	text-align: center
+	a
+		text-decoration: underline dashed
 
 .footer
+	color: theme.$Moonlight_Text
 
-	display: flex
-	flex: 1
-	padding: 2rem 0
-	// border-top: 1px solid whitesmoke
-	justify-content: center
-	align-items: center
-
-	h3
-		width: min-content
-		display: flex
-		justify-content: center
-		align-items: center
-		padding: 5px
-		// flex-grow: 1
-		border: double white medium
+	p
+		margin: .25rem
+		font-size: small
+		opacity:60%

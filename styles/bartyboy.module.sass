@@ -1,11 +1,16 @@
 // @use 'base'
 @use 'theme'
 
+.main
+	height: 100vh
+	background: theme.$Volcano_Notifications
+
 .cont
 	display: flex
 	// justify-content: center
 	flex-direction: column
 	align-items: center
+	color: theme.$Volcano_Disabled
 
 .bartWrap
 	width: max-content
@@ -23,7 +28,7 @@
 	width: 90vw
 	min-height: 10vh
 	max-height: min-content
-	background-color: theme.$primaryColorDark
+	background-color: theme.$Volcano_Bg
 	border-radius: 5px
 	padding: 1em
 	line-height: 1.4

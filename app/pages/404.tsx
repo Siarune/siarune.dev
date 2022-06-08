@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../styles/404.module.sass";
+import styles from "styles/404.module.sass";
 
 export default function FourOhFour() {
 	return (
