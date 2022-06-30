@@ -1,5 +1,5 @@
 import { BlitzPage, Link } from "blitz"
-import CluckHUD from 'app/core/components/CluckHUD'
+import CluckHUD from "app/core/components/CluckHUD"
 import styles from "styles/index.module.sass"
 import chud from "styles/chud.module.sass"
 
@@ -15,20 +15,20 @@ const Home: BlitzPage = () => {
 						<p>
 							Hey, Sia here. Nice place, huh?
 							<br />
-							It&apos;s taken quite a few redesigns, and this certainly
-							won&apos;t be the last :D
+							It&apos;s taken quite a few redesigns, and this certainly won&apos;t be
+							the last :D
 							<br />
-							I&apos;m just a computer science student with a little too much free time.
+							I&apos;m just a computer science student with a little too much free
+							time.
 							<br />
 							Why don&apos;t you check out the place while you&apos;re here?
 							<br />
-							You can also take a look at my <a
-								href="https://siarune.me/" 
-								target="_blank" 
-								rel="noopener noreferrer">
+							You can also take a look at my{" "}
+							<a href="https://siarune.me/" target="_blank" rel="noopener noreferrer">
 								old website
-							</a>,
-							or where it all started on <a
+							</a>
+							, or where it all started on{" "}
+							<a
 								href="https://github.com/Siarune"
 								target="_blank"
 								rel="noopener noreferrer"
@@ -65,10 +65,12 @@ const Home: BlitzPage = () => {
 						<h4>He hates everything and it&apos;s great</h4>
 					</div>
 				</div>
-
 			</div>
 			<footer className={styles.footer}>
-				<p>Created and maintained by Aidan Sharp and open source on Github under the GPLv3 liscence</p>
+				<p>
+					Created and maintained by Aidan Sharp and open source on Github under the GPLv3
+					liscence
+				</p>
 			</footer>
 		</main>
 	)
