@@ -1,23 +1,30 @@
-import styles from '/styles/chud.module.sass'
-import Image from 'next/image'
-import { useClerk, useUser, UserButton, SignedOut, SignedIn } from "@clerk/nextjs";
-import { logout } from 'app/auth/mutations/logout'
-import { useMutation } from "blitz"
+import styles from "styles/chud.module.sass"
+import Image from "next/image"
+import { useClerk, useUser, UserButton, SignedOut, SignedIn } from "@clerk/nextjs"
+// import { logout } from 'app/auth/mutations/logout'
+// import { useMutation } from "blitz"
 
-export default function CluckHUD({ theme }: { theme: string }) {
-
+export default function CluckHUD({ theme }: { theme: any }) {
 	// const [logoutMutation] = useMutation(logout)
 
 	return (
 		<nav className={theme}>
 			<ul className={styles.navbarNav}>
-
 				<li className={styles.intro}>
 					<div className={styles.tWrap}>
-						<Image src="/hentieSolid.png" alt="chikin" className={styles.thumbnail} height="32" width="32" layout="fixed" />
+						<Image
+							src="/hentieSolid.png"
+							alt="chikin"
+							className={styles.thumbnail}
+							height="32"
+							width="32"
+							layout="fixed"
+						/>
 					</div>
 					{/* <Link href="/"> */}
-					<h2 className={styles.me}>Siarune<span className={styles.span}>.dev</span></h2>
+					<h2 className={styles.me}>
+						Siarune<span className={styles.span}>.dev</span>
+					</h2>
 					{/* </Link> */}
 				</li>
 
@@ -37,7 +44,7 @@ export default function CluckHUD({ theme }: { theme: string }) {
 }
 
 const SignedOutButton = () => {
-	const { openSignIn, openSignUp } = useClerk();
+	const { openSignIn, openSignUp } = useClerk()
 
 	return (
 		<li className={styles.sign}>
@@ -45,7 +52,7 @@ const SignedOutButton = () => {
 				<h3>Sign in</h3>
 			</button>
 		</li>
-	);
+	)
 }
 
 const SignedInButton = () => {
@@ -53,5 +60,5 @@ const SignedInButton = () => {
 		<li className={styles.sign}>
 			<UserButton />
 		</li>
-	);
+	)
 }

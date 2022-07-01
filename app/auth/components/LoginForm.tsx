@@ -29,14 +29,20 @@ export const LoginForm = (props: LoginFormProps) => {
 						} else {
 							return {
 								[FORM_ERROR]:
-									"Sorry, we had an unexpected error. Please try again. - " + error.toString(),
+									"Sorry, we had an unexpected error. Please try again. - " +
+									error.toString(),
 							}
 						}
 					}
 				}}
 			>
 				<LabeledTextField name="email" label="Email" placeholder="Email" />
-				<LabeledTextField name="password" label="Password" placeholder="Password" type="password" />
+				<LabeledTextField
+					name="password"
+					label="Password"
+					placeholder="Password"
+					type="password"
+				/>
 				<div>
 					<Link href={Routes.ForgotPasswordPage()}>
 						<a>Forgot your password?</a>

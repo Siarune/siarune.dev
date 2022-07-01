@@ -16,8 +16,8 @@ const ForgotPasswordPage: BlitzPage = () => {
 				<div>
 					<h2>Request Submitted</h2>
 					<p>
-						If your email is in our system, you will receive instructions to reset your password
-						shortly.
+						If your email is in our system, you will receive instructions to reset your
+						password shortly.
 					</p>
 				</div>
 			) : (
@@ -30,7 +30,8 @@ const ForgotPasswordPage: BlitzPage = () => {
 							await forgotPasswordMutation(values)
 						} catch (error: any) {
 							return {
-								[FORM_ERROR]: "Sorry, we had an unexpected error. Please try again.",
+								[FORM_ERROR]:
+									"Sorry, we had an unexpected error. Please try again.",
 							}
 						}
 					}}

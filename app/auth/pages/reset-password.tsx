@@ -24,7 +24,11 @@ const ResetPasswordPage: BlitzPage = () => {
 				<Form
 					submitText="Reset Password"
 					schema={ResetPassword}
-					initialValues={{ password: "", passwordConfirmation: "", token: query.token as string }}
+					initialValues={{
+						password: "",
+						passwordConfirmation: "",
+						token: query.token as string,
+					}}
 					onSubmit={async (values) => {
 						try {
 							await resetPasswordMutation(values)
@@ -35,7 +39,8 @@ const ResetPasswordPage: BlitzPage = () => {
 								}
 							} else {
 								return {
-									[FORM_ERROR]: "Sorry, we had an unexpected error. Please try again.",
+									[FORM_ERROR]:
+										"Sorry, we had an unexpected error. Please try again.",
 								}
 							}
 						}
