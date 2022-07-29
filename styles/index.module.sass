@@ -11,63 +11,96 @@
 	justify-content: space-between
 
 .cont
-	display: grid
+	display: flex
+
+	@media (max-width:1000px)
+		flex-direction: column
 
 .link a
 	color: currentColor
 	text-decoration: none
 
-.grid
-	color: theme.$Moonlight_Text
-	justify-self: center
-	// align-items: start
-	min-height: 50vh
-	max-height: fit-content
-	width: 60vw
-	// margin: 1em
-	display: grid
-	gap: 1em 2em
-	grid-template-areas: 'card1 card1 card2 card2' 'card1 card1 card3 card3' 'card1 card1 card4 card4'
+.bio, .card
+	background: theme.$Moonlight_Bg_2
+	margin: 1rem
+	padding: .25rem
+	border-radius: 5px
 
+.bio
 	h2
 		text-align: center
-
-	@media (max-width:1000px)
-		grid-template-areas: 'card1' 'card2' 'card3' 'card4'
-		width: 90vw
-		margin-top: 2rem
-		margin-bottom: 2rem
-
-@for $i from 0 through 4
-	.card:nth-child(#{$i})
-		grid-area: card#{$i}
-		border-radius: 5px
-		background-color: theme.$Moonlight_Bg_2
-		padding: 0.5em
-		box-shadow: rgba(3, 8, 20, 0.1) 0 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0 0.075rem 0.175rem
-		transition: all 500ms
-
-@for $i from 2 through 4
-	.card:nth-child(#{$i})
-		min-width: 20vw
-		text-align: center
-		
-		h4
-			opacity: 60%
-
-	.card:nth-child(#{$i}):hover
-		box-shadow: rgba(2, 8, 20, 0.1) 0 0.35rem 1.75rem, rgba(2, 8, 20, 0.08) 0 0.175rem 0.5rem
-		transform: translateY(-3px) scale(1.05)
-		animation-fill-mode: cubic-bezier(.55, .09, .68, .53)
-
-.card:nth-child(1)
-	display: flex
-	flex-direction: column
-	align-items: center
-	justify-content: center
-
 	a
 		text-decoration: underline dashed
+
+.cards
+	max-height: 40vh
+	overflow: scroll
+	margin-bottom: 1rem
+
+	@media (max-width:1000px)
+		max-height: fit-content
+
+.card
+	text-align: center
+	transition: all 500ms
+
+.card:hover
+	box-shadow: rgba(2, 8, 20, 0.1) 0 0.35rem 1.75rem, rgba(2, 8, 20, 0.08) 0 0.175rem 0.5rem
+	transform: translateY(-3px) scale(1.05)
+	animation-fill-mode: cubic-bezier(.55, .09, .68, .53)
+
+// .grid
+// 	color: theme.$Moonlight_Text
+// 	justify-self: center
+// 	// align-items: start
+// 	min-height: 50vh
+// 	max-height: fit-content
+// 	width: 60vw
+// 	// margin: 1em
+// 	display: grid
+// 	gap: 1em 2em
+// 	grid-template-areas: 'card1 card1 card2 card2' 'card1 card1 card3 card3' 'card1 card1 card4 card4'
+
+// 	h2
+// 		text-align: center
+
+// 	@media (max-width:1000px)
+// 		grid-template-areas: 'card1' 'card2' 'card3' 'card4'
+// 		width: 90vw
+// 		margin-top: 2rem
+// 		margin-bottom: 2rem
+
+// @for $i from 0 through 4
+// 	.card:nth-child(#{$i})
+// 		grid-area: card#{$i}
+// 		border-radius: 5px
+// 		background-color: theme.$Moonlight_Bg_2
+// 		padding: 0.5em
+// 		box-shadow: rgba(3, 8, 20, 0.1) 0 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0 0.075rem 0.175rem
+// 		transition: all 500ms
+
+// @for $i from 2 through 4
+// 	.card:nth-child(#{$i})
+// 		min-width: 20vw
+// 		text-align: center
+		
+// 		h4
+// 			opacity: 60%
+
+// 	.card:nth-child(#{$i}):hover
+// 		box-shadow: rgba(2, 8, 20, 0.1) 0 0.35rem 1.75rem, rgba(2, 8, 20, 0.08) 0 0.175rem 0.5rem
+// 		transform: translateY(-3px) scale(1.05)
+// 		animation-fill-mode: cubic-bezier(.55, .09, .68, .53)
+
+// .bio
+// 	display: flex
+// 	flex-direction: column
+// 	align-items: center
+// 	justify-content: center
+// 	background: theme.$Moonlight_Bg_2
+
+// 	a
+// 		text-decoration: underline dashed
 
 .footer
 	color: theme.$Moonlight_Text

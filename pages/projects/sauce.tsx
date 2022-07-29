@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/image";
 import styles from 'styles/sauce.module.sass'
 import chud from "styles/chud.module.sass"
 import { serialize } from 'next-mdx-remote/serialize'

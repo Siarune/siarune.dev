@@ -1,5 +1,6 @@
+import Link from "next/link";
+import Image from "next/image";
 import styles from "styles/chud.module.sass"
-import Image from "next/image"
 import { useClerk, useUser, UserButton, SignedOut, SignedIn } from "@clerk/nextjs"
 // import { logout } from 'app/auth/mutations/logout'
 // import { useMutation } from "blitz"
@@ -21,11 +22,11 @@ export default function CluckHUD({ theme }: { theme: any }) {
 							layout="fixed"
 						/>
 					</div>
-					{/* <Link href="/"> */}
+					<Link href="/"><a>
 					<h2 className={styles.me}>
 						Siarune<span className={styles.span}>.dev</span>
 					</h2>
-					{/* </Link> */}
+					</a></Link>
 				</li>
 
 				<SignedIn>

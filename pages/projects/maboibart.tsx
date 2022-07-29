@@ -1,12 +1,12 @@
-import Image from "next/image"
-import Link from "next/link"
+import Link from "next/link";
+import Image from "next/image";
 import styles from "styles/bartyboy.module.sass"
 import chud from "styles/chud.module.sass"
 import { serialize } from "next-mdx-remote/serialize"
 import { MDXRemote } from "next-mdx-remote"
 import { promises as fs } from "fs"
 import path from "path"
-import CluckHUD from 'app/core/components/CluckHUD'
+import CluckHUD from "app/core/components/CluckHUD"
 
 export default function bart({ source }: { source: any }) {
 	return (
@@ -28,7 +28,7 @@ export default function bart({ source }: { source: any }) {
 				<div className={styles.content}>
 					<MDXRemote {...source} components={components} className={styles.mdx} />
 				</div>
-			</div >
+			</div>
 		</main>
 	)
 }
